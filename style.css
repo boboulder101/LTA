@@ -1,0 +1,70 @@
+body {
+	background: #202020;
+	font: bold 12px Roboto Mono, monospace;
+	margin: 0;
+	padding: 0;
+	min-width: 960px;
+	color: #bbb; 
+}
+
+#container {
+	width: 960px; 
+	margin: 0 auto; 
+	overflow: hidden;
+	text-align: center;
+}
+
+#lta {
+	width: 800px; 
+	margin: 100px auto; 
+	padding: 10px; 
+	border: 1px solid #333; 
+	color: #fff; 
+	text-align: right;
+}
+
+span { 
+	display: inline; 
+	font-size: 6.3rem; 
+	text-align: center; 
+	text-shadow: 0 0 5px #00c6ff; 
+}
+
+#text {
+	display: block;
+	font-size: 2rem;
+	color: #fff;
+}
+
+.vertical {
+	position: relative;
+	display: inline-block;
+	bottom: 20px;
+	font-size: 1.7rem;
+   transform: rotate(270deg);
+	animation: toggle 1.5s ease infinite; 
+}
+
+.small {
+	position: relative;
+	display: inline-block;
+	bottom: 20px;
+	font-size: 1.7rem;
+	animation: toggle 1.5s ease infinite; 
+}
+/*
+@-webkit-keyframes toggle {
+	0% {
+		opacity: 1.0; 
+		text-shadow: 0 0 20px #00c6ff;
+	}
+	50% {
+		opacity: 0; 
+		text-shadow: none; 
+	}
+	100% {
+		opacity: 1.0; 
+		text-shadow: 0 0 20px #00c6ff; 
+	}	
+}
+*/
