@@ -5,22 +5,26 @@ $password = "Abcd1234";
 $dbname = "LTA";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
 
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM LTATabell";
+$result = $conn->query($sql);
 
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-    	echo "<div style="display: none;"><script type='text/javascript'> var test = "$row["Date"]." </script></div>";
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc())  {
+    	$safe = $row['Safe-YTD'];
+    	$NoA = $row['NoA-YTD'];
+    	$LTI = $row['LTI-YTD'];
+    	$DSL = $row['DSL-LTI'];
+    	$date = $row['Datum'];
+    	
     }
 } else {
-    echo "<p style='display: none;'>0 results</p>";
+    echo "<p>0 results</p>";
 }
 
 mysqli_close($conn);
@@ -71,7 +75,7 @@ mysqli_close($conn);
 
 //script
 $(document).ready(function() {
-	$("#lta").daysfromdate({ date: "10 May 2017" }, function() {
+	$("#lta").daysfromdate({ date: <?php echo $date;?> }, function() {
 		$("#safedays").html("<span> Tidigare!! </span>");
 		$("#text").hide();
 	});

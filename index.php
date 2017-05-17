@@ -6,11 +6,19 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
-	<?php include("script.php");?>
+	
 
 </head>
 <body>
+	<?php include_once("script.php");?>
 	<div id="container">
+	<?
+		echo $row[1];
+    	echo $row[2];
+    	echo $row[3];
+    	echo $row[4];
+    	echo $row[5];
+    	?>
 		<div id="lta">
 		<span>
 		<button style="font-size: 50px; background-color: red;">Accident</button>
