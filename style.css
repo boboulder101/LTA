@@ -7,6 +7,10 @@ body {
 	color: #bbb; 
 }
 
+.accident, .incident {
+	font-size: 2rem;
+}
+
 #container {
 	width: 960px; 
 	margin: 0 auto; 
